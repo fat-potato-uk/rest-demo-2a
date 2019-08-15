@@ -1,6 +1,7 @@
 package demo.models;
 
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,14 +9,11 @@ import javax.persistence.Id;
 
 @Data
 @Entity
+@RequiredArgsConstructor
 public class Employee {
-
-    private @Id @GeneratedValue Long id;
-    private String name;
-    private String role;
-
-    public Employee(String name, String role) {
-        this.name = name;
-        this.role = role;
-    }
+    @Id
+    @GeneratedValue
+    private Long id;
+    private final String name;
+    private final String role;
 }
