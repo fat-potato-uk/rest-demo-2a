@@ -9,7 +9,7 @@ Frodo Baggins : Thief
 
 So, to start, lets look at the `pom.xml` for the bits we will need:
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -77,7 +77,7 @@ So, to start, lets look at the `pom.xml` for the bits we will need:
 
 This is nearly identical to the last challenge, but with the inclusion of:
 
-```
+```xml
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
@@ -90,7 +90,7 @@ the principles of "unit" tests. Feel free to ask me to rant more on this point, 
 
 Next, lets create an entity that will be used to save the employee details to the database:
 
-```
+```java
 package demo.models;
 
 import lombok.Data;
@@ -123,7 +123,7 @@ field annotations.
 
 Next we will need to save this entity some how. Thankfully, in Spring Boot, this is very easy:
 
-```
+```java
 package demo.repositories;
 
 import demo.models.Employee;
@@ -148,7 +148,7 @@ the interface (but this is rare).
 
 Now, to test this, we are going to create some entries on startup:
 
-```
+```java
 package demo;
 
 import demo.models.Employee;
@@ -177,7 +177,7 @@ This is doing a little bit of black magic. We are defining a `CommandLineRunner`
 
 Meaning we also need a entry point as before:
 
-```
+```java
 package demo;
 
 import org.springframework.boot.SpringApplication;
@@ -194,14 +194,14 @@ public class Application {
 Now, to test this. You will need to create a test, and have it load the Spring context. This can be done with
 the following (class) annotations:
 
-```
+```java
 @RunWith(SpringRunner.class)
 @SpringBootTest
 ```
 
 In addition, you will need to wire the `EmployeeRepository`, this can be done by:
 
-```
+```java
 @Autowired
 private EmployeeRepository employeeRepository;
 ```
