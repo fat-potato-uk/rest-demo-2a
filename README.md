@@ -205,7 +205,21 @@ In addition, you will need to wire the `EmployeeRepository`, this can be done by
 @Autowired
 private EmployeeRepository employeeRepository;
 ```
+ 
+For example:
 
+```java
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class EmployeeRepositoryTest {
+
+    @Autowired
+    private EmployeeRepository employeeRepository;
+
+    @Test
+    public void testSetupRepoCount() {
+        assertEquals(...);
+```
 Try to test both the total number of entries in the database and the number for each named individual.
 
 Good luck!
