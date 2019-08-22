@@ -219,6 +219,8 @@ public class EmployeeRepositoryTest {
     @Test
     public void testSetupRepoCount() {
         assertEquals(...);
+    }
+}
 ```
 Try to test both the total number of entries in the database and the number for each named individual.
 
