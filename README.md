@@ -20,10 +20,15 @@ So, to start, lets look at the `pom.xml` for the bits we will need:
     <artifactId>rest-demo-2</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <java.version>15</java.version>
+        <spring.boot.version>2.3.7.RELEASE</spring.boot.version>
+    </properties>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.5.RELEASE</version>
+        <version>2.3.7.RELEASE</version>
     </parent>
 
     <dependencies>
@@ -57,16 +62,10 @@ So, to start, lets look at the `pom.xml` for the bits we will need:
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.12</version>
+            <version>1.18.16</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
-
-    <properties>
-        <java.version>13</java.version>
-        <spring.boot.version>2.2.5.RELEASE</spring.boot.version>
-    </properties>
-
 
     <build>
         <plugins>
